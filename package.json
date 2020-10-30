@@ -1,0 +1,23 @@
+{
+  "name": "ssf-day04",
+  "version": "1.0.0",
+  "description": "shopping cart using POST and BOOTSTRAP styling",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leejianhowe/ssf-day04.git"
+  },
+  "author": "jhlee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leejianhowe/ssf-day04/issues"
+  },
+  "homepage": "https://github.com/leejianhowe/ssf-day04#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0"
+  }
+}

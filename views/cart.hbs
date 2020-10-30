@@ -1,0 +1,70 @@
+<form method="POST" action="/">
+
+    <div class="form-group">
+        <label for="product">Product</label>
+        <input type="text" name="product" class="form-control" placeholder="product name">
+    </div>
+
+    <div class="form-group">
+        <label for="qty">Quantity</label>
+        <input min="1" type="text" name="qty" class="form-control" placeholder="1 or more">
+    </div>
+
+
+    <div class="form-group">
+        <label for="price">Price</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </div>
+            <input type="text" class="form-control" name="price" placeholder="unit cost">
+        </div>
+    </div>
+    
+    {{!-- this hidden input stores the shopping cart data in JSON string --}}
+    <input type="hidden" name="cartState" value="{{cartState}}">
+    
+    <div class="d-flex justify-content-end">
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+
+
+</form>
+
+{{#if cartEmpty}}
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th colspan="4">Shopping Cart</th>
+        </tr>
+        <tr>
+            
+            <th scope="col">Product</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Price</th>
+            <th scope="col">Subtotal</th>
+        </tr>
+    </thead>
+        <tbody>
+            {{#each cart}}
+                <tr>
+
+                    <td>{{this.product}}</td>
+                    <td>{{this.qty}}</td>
+                    <td>{{this.price}}</td>
+                    <td>{{this.subtotal}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Grand Total</td>
+                <td>{{grandTotal}}</td>
+            </tr>
+        </tfoot>
+
+</table>
+{{/if}}
